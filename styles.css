@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Epilogue', Arial, sans-serif; /* Ensuring fallback fonts */
+    line-height: 1.5;
+    color: #333; /* Default text color */
+    background-color: #ebecee; /* Background color */
+    background-image: 
+        linear-gradient(to bottom, transparent 2px, transparent 2px), /* Horizontal lines */
+        linear-gradient(to right, rgba(199, 198, 195, 0.35) 1.5px, transparent 1.5px); /* Vertical lines */
+        background-size: 196px 100px; /* Equal spacing for vertical and horizontal lines */
+        background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+main, section {
+    max-width: 1280px; /* Limit width to 1280px */
+    margin: 0 auto; /* Center content */
+    padding: 0 1.5rem; /* Add padding for smaller screens */
+}
+
+section {
+    scroll-margin-top: 5rem; /* Adjust as needed */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 2rem 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.left-nav {
+    justify-content: flex-start;
+}
+
+.right-nav {
+    justify-content: flex-end;
+}
+
+header nav ul li a {
+    text-decoration: none; /* No underline by default */
+    font-size: 0.875rem;
+    letter-spacing: 0.25px;
+    font-weight: 400;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+header nav ul li a {
+    text-decoration: none; /* No underline by default */
+    font-size: 0.875rem;
+    letter-spacing: 0.25px;
+    font-weight: 400;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 0;
+    height: 1.4px;
+    background-color: #666;
+    transition: width 0.3s ease-in-out;
+}
+
+header nav ul li a:hover {
+    color: #666; /* Optional: Change text color on hover */
+}
+
+header nav ul li a:hover::after {
+    width: 100%; /* Full underline width on hover */
+}
+
+main {
+    margin-top: 13rem;
+    padding: 2rem 0;
+}
+
+.intro {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.details {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4rem;
+}
+
+.jobs {
+    text-align: left;
+}
+
+.jobs p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.jobs .date {
+    color: #666; /* Set date color to #666 */
+}
+
+.works {
+    max-width: 1280px;
+    margin: 10rem auto 1rem auto;
+}
+
+.works h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: -0.75px;
+}
+
+.work-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-decoration: none;
+    margin-bottom: 3rem;
+}
+
+.work-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-image {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden; /* Ensures the image stays inside the bounding box */
+    width: 100%; /* Ensure it fills its container */
+    height: 40rem; /* Maintain consistent height */
+}
+
+.work-image img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure it respects the .work-image height */
+    object-fit: cover; /* Ensure the image fits nicely without distortion */
+    border-radius: 1rem; /* Same border radius for consistency */
+    transition: transform 0.3s ease-in-out;
+}
+
+.work-image img:hover {
+    transform: scale(1.05); /* Subtle zoom on hover without increasing container size */
+}
+
+.work-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 1rem;
+}
+
+.work-details {
+    flex: 1; /* Allow details to take up available space */
+}
+
+.work-details h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.work-details p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.25rem 0;
+    max-width: 720px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    align-self: flex-start; /* Align tags to the top */
+    margin-left: 2rem; /* Add spacing between details and tags */
+}
+
+.tags span {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.75rem 0.1rem 0.75rem; /* Custom padding for tags */
+    border-radius: 9999px;
+    border: 1px solid #333;
+}
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 2rem 1.5rem 2rem;
+    font-size: 0.875rem;
+    color: #666; /* Subtle gray for text */
+    line-height: 1.2;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: left; /* Default to center text */
+}
+
+.footer-section.right {
+    text-align: right; /* Right-align the last section */
+}
+
+@media screen and (min-width: 1800px) {
+    body {
+        background-size: 240px 200px; /* Further increase spacing on large screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-top: 8rem;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .details {
+        margin-top: 2.5rem;
+    }
+
+    .jobs p {
+        font-size: 0.875rem;
+    }
+
+    header {
+        padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .work-image {
+        height: 24rem;
+    }
+
+    .work-content {
+        flex-direction: column;
+    }
+
+    .tags {
+        margin-left: 0;
+        margin: -0.25rem 0 0.75rem 0;
+        order: 1;
+    }
+
+    .works {
+        margin: 4rem auto 0 auto;
+    }
+
+    .work-details {
+        order: 2;
+    }
+
+    .footer {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        margin-top: 12rem;
+    }
+
+    .intro h1 {
+        font-size: 1.6rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .right-nav {
+        align-items: flex-end;
+    }
+
+    .work-image {
+        height: 16rem;
+    }
+
+    .details {
+        justify-content: flex-start;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .footer-section {
+        text-align: right;
+    }
+
+    .footer-section.left {
+        order: 2;
+    }
+}

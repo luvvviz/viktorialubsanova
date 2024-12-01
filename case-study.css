@@ -1,0 +1,286 @@
+body {
+    background-image: none;
+}
+
+.back-link {
+    text-decoration: none; /* No underline */
+    font-size: 1.5rem; /* Font size */
+    letter-spacing: 0.25px; /* Consistent letter spacing */
+    font-weight: 400; /* Font weight */
+    color: #333; /* Default text color */
+    position: relative; /* Necessary for ::after positioning */
+    display: inline-flex; /* Ensures proper alignment for text and icon */
+    transition: color 0.2s ease-in-out; /* Smooth color transition */
+    align-items: center; /* Align text and icon vertically */
+    gap: 0.5rem; /* Add spacing between the icon and text */
+}
+
+.back-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px; /* Adjust underline's position */
+    width: 0; /* Start with no width */
+    height: 2px; /* Thickness of the underline */
+    background-color: #666; /* Underline color */
+    transition: width 0.3s ease-in-out; /* Smooth animation */
+}
+
+.back-link:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+.back-link:hover {
+    color: #666; /* Change text color on hover */
+}
+
+.back-link svg {
+    width: 1.8rem; /* Icon width */
+    height: 1.8rem; /* Icon height */
+    transition: color 0.2s ease-in-out;
+    margin-bottom: 0.35rem;
+}
+
+main {
+    margin-top: 6rem;
+}
+
+.case-study-hero {
+    text-align: left;
+}
+
+.case-study-header {
+    display: flex;
+    justify-content: space-between; /* Space between the title and tags */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 1.5rem;
+}
+
+.case-study-header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -1px;
+    flex: 1;
+}
+
+.case-study-header .tags {
+    align-self: center;
+}
+
+.case-study-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.case-study-image img {
+    width: 100%;
+    height: 43rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.case-study-details {
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    padding: 4rem 1.5rem;
+}
+
+.content {
+    max-width: 640px; /* Limit the width of the content */
+}
+
+.detail-item {
+    margin-bottom: 2.5rem; /* Add space between items */
+}
+
+.detail-item:last-child {
+    margin-bottom: 0; /* Remove margin from the last item */
+}
+
+.detail-item h2, .contact-info h2 {
+    font-size: 1rem;
+    font-weight: 600; /* Bold heading */
+    margin-bottom: 0.8rem; /* Space below headings */
+}
+
+.detail-item p, .detail-item ul {
+    color: #666; /* Subtle gray for paragraph text */
+    margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    list-style: disc outside;
+    padding-left: 0.75rem;
+}
+
+.image-row {
+    display: flex; /* Use Flexbox to align images in a row */
+    gap: 1rem; /* Add spacing between images */
+}
+
+.image-row .image-container {
+    flex: 1; /* Make containers take up equal available space */
+}
+
+.image-row .image-container:first-child {
+    flex: 1; /* 1/3 of the row */
+}
+
+.image-row .image-container:last-child {
+    flex: 2; /* 2/3 of the row */
+}
+
+.image-row img {
+    width: 100%; /* Make images responsive */
+    height: 28rem; /* Maintain aspect ratio */
+    border-radius: 1rem; /* Optional: Add rounded corners */
+    object-fit: cover;
+}
+
+.contact-section {
+    padding: 4rem 1.5rem;
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Align items vertically */
+    text-align: center; /* Center-align text within the section */
+}
+
+.contact-info ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Display items in a row */
+    flex-direction: row; /* Items in a row */
+    gap: 1rem; /* Space between items */
+    font-size: 1rem; /* Match font size to h2 */
+    color: #333; /* Text color */
+    justify-content: center; /* Center items horizontally */
+}
+
+.contact-info ul li a {
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Match font size */
+    font-weight: 400;
+    color: #333; /* Default text color */
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease-in-out; /* Smooth color change */
+}
+
+.contact-info ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust underline position */
+    width: 0; /* Start with no width */
+    height: 1.4px; /* Match underline thickness */
+    background-color: #666; /* Underline color */
+    transition: width 0.3s ease-in-out; /* Smooth animation for underline */
+}
+
+.contact-info ul li a:hover {
+    color: #666; /* Change text color on hover */
+}
+
+.contact-info ul li a:hover::after {
+    width: 100%; /* Expand underline fully on hover */
+}
+
+@media screen and (max-width: 972px) {
+    .case-study-image img.second {
+        height: 32rem;
+    }
+
+    .image-row img {
+        height: 24rem; /* Maintain aspect ratio */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .case-study-header {
+        flex-direction: column; /* Stack title and tags vertically */
+        align-items: flex-start; /* Align content to the left */
+    }
+
+    .case-study-header .tags {
+        margin-top: 0.75rem; /* Add space between the title and tags */
+        align-self: flex-start; /* Ensure tags align to the left */
+    }
+
+    .case-study-header h1 {
+        font-size: 2rem; /* Adjust the title size for smaller screens */
+    }
+
+    header {
+        padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    }
+
+    .case-study-image img {
+        height: 24rem; /* Adjust image height for smaller screens */
+    }
+
+    .case-study-details {
+        justify-content: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .content {
+        max-width: 100%; /* Use full width on smaller screens */
+    }
+
+    .image-row img {
+        height: 20rem; /* Maintain aspect ratio */
+    }
+
+    .image-row {
+        gap: 0.5rem; /* Add spacing between images */
+    }
+}
+
+@media screen and (max-width: 716px) {
+    .case-study-image img.second {
+        height: 22rem;
+    }
+
+    .image-row {
+        flex-direction: column; /* Stack images vertically */
+    }
+
+    .image-row .image-container {
+        flex: none; /* Reset flex property */
+        width: 100%; /* Make containers full-width */
+    }
+
+    .image-row img {
+        height: 24rem;
+    }
+
+    body {
+        font-size: 0.875rem;
+    }
+
+    .detail-item p, .detail-item ul {
+        margin-bottom: 0.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .case-study-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .case-study-image img {
+        height: 16rem;
+    }
+
+    .case-study-image img.second {
+        height: 16rem;
+    }
+
+    .image-row img {
+        height: 16rem;
+    }
+}
