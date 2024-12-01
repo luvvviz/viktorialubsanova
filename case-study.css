@@ -7,7 +7,7 @@ body {
     font-size: 1.5rem; /* Font size */
     letter-spacing: 0.25px; /* Consistent letter spacing */
     font-weight: 400; /* Font weight */
-    color: #333; /* Default text color */
+    color: #363b45; /* Default text color */
     position: relative; /* Necessary for ::after positioning */
     display: inline-flex; /* Ensures proper alignment for text and icon */
     transition: color 0.2s ease-in-out; /* Smooth color transition */
@@ -22,7 +22,7 @@ body {
     bottom: 2px; /* Adjust underline's position */
     width: 0; /* Start with no width */
     height: 2px; /* Thickness of the underline */
-    background-color: #666; /* Underline color */
+    background-color: #4c5361; /* Underline color */
     transition: width 0.3s ease-in-out; /* Smooth animation */
 }
 
@@ -31,7 +31,7 @@ body {
 }
 
 .back-link:hover {
-    color: #666; /* Change text color on hover */
+    color: #4c5361; /* Change text color on hover */
 }
 
 .back-link svg {
@@ -106,7 +106,7 @@ main {
 }
 
 .detail-item p, .detail-item ul {
-    color: #666; /* Subtle gray for paragraph text */
+    color: #4c5361; /* Subtle gray for paragraph text */
     margin-bottom: 1rem; /* Space between paragraphs */
 }
 
@@ -177,12 +177,12 @@ ul {
     bottom: -2px; /* Adjust underline position */
     width: 0; /* Start with no width */
     height: 1.4px; /* Match underline thickness */
-    background-color: #666; /* Underline color */
+    background-color: #4c5361; /* Underline color */
     transition: width 0.3s ease-in-out; /* Smooth animation for underline */
 }
 
 .contact-info ul li a:hover {
-    color: #666; /* Change text color on hover */
+    color: #4c5361; /* Change text color on hover */
 }
 
 .contact-info ul li a:hover::after {
@@ -256,10 +256,6 @@ ul {
 
     .image-row img {
         height: 24rem;
-    }
-
-    body {
-        font-size: 0.875rem;
     }
 
     .detail-item p, .detail-item ul {
