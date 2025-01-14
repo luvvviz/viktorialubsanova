@@ -238,7 +238,7 @@ main {
     text-align: right; /* Right-align the last section */
 }
 
-.intro a.scroll-text {
+a.scroll-text {
     text-decoration: none; /* No underline by default */
     font-size: 1rem;
     letter-spacing: 0.25px;
@@ -251,7 +251,7 @@ main {
     bottom: 15%;
 }
 
-.intro a.scroll-text::after {
+a.scroll-text::after {
     content: '';
     position: absolute;
     left: 0;
@@ -262,11 +262,11 @@ main {
     transition: width 0.3s ease-in-out;
 }
 
-.intro a.scroll-text:hover {
+a.scroll-text:hover {
     color: #4c5361; /* Optional: Change text color on hover */
 }
 
-.intro a.scroll-text:hover::after {
+a.scroll-text:hover::after {
     width: 100%; /* Full underline width on hover */
 }
 
@@ -377,11 +377,11 @@ img.arrow {
         text-align: left;
     }
 
-    .intro a.scroll-text {
+    a.scroll-text {
         display: none; /* Hides the "Scroll" text */
     }
 
-    .intro a img.arrow {
+    img.arrow {
         display: block; /* Ensures the arrow is visible */
         margin-top: 2rem;
     }
