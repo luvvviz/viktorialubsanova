@@ -12,12 +12,7 @@ body {
     font-family: 'Epilogue', Arial, sans-serif; /* Ensuring fallback fonts */
     line-height: 1.5;
     color: #363b45; /* Default text color */
-    background-color: #ebecee; /* Background color */
-    background-image: 
-        linear-gradient(to bottom, transparent 2px, transparent 2px), /* Horizontal lines */
-        linear-gradient(to right, rgba(199, 198, 195, 0.35) 1.5px, transparent 1.5px); /* Vertical lines */
-        background-size: 196px 100px; /* Equal spacing for vertical and horizontal lines */
-        background-position: center;
+    background-color: #ebecee;
     margin: 0;
     padding: 0;
 }
@@ -105,44 +100,43 @@ header nav ul li a:hover::after {
 }
 
 main {
-    margin-top: 13rem;
     padding: 2rem 0;
 }
 
 .intro {
-    text-align: left;
-    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    margin-top: -2rem;
 }
 
 .intro h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -1px;
+    font-size: clamp(40px, 6vw, 110px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
 }
 
-.details {
+.perex {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.jobs {
-    text-align: left;
-}
-
-.jobs p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
-
-.jobs .date {
-    color: #4c5361; /* Set date color to #4c5361 */
+.perex p {
+    font-size: clamp(16px, 2vw, 24px);
+    margin-top: 2.5rem;
+    line-height: 1.2;
+    max-width: 720px;
 }
 
 .works {
     max-width: 1280px;
-    margin: 10rem auto 1rem auto;
+    margin: 0 auto 1rem auto;
 }
 
 .works h2 {
@@ -247,23 +241,48 @@ main {
     text-align: right; /* Right-align the last section */
 }
 
-@media screen and (min-width: 1800px) {
-    body {
-        background-size: 240px 200px; /* Further increase spacing on large screens */
+.intro a {
+    text-decoration: none; /* No underline by default */
+    font-size: 1rem;
+    letter-spacing: 0.25px;
+    font-weight: 400;
+    color: #363b45;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease-in-out; /* Smooth hover effect */
+    position: absolute;
+    bottom: 15%;
+}
+
+.intro a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 0;
+    height: 1.4px;
+    background-color: #4c5361;
+    transition: width 0.3s ease-in-out;
+}
+
+.intro a:hover {
+    color: #4c5361; /* Optional: Change text color on hover */
+}
+
+.intro a:hover::after {
+    width: 100%; /* Full underline width on hover */
+}
+
+@media screen and (min-width: 1440px) {
+    main, section {
+        max-width: 1920px;
     }
 }
 
-@media screen and (max-width: 768px) {
-    main {
-        margin-top: 8rem;
-    }
-
+@media screen and (max-width: 1024px) {
     .intro h1 {
-        font-size: 2rem;
-    }
-
-    .details {
-        margin-top: 2.5rem;
+        letter-spacing: -1px;
+        font-weight: 700;
     }
 
     header {
@@ -300,17 +319,19 @@ main {
     .footer {
         padding: 0 1.5rem 1.5rem 1.5rem;
     }
+
+    .intro {
+        margin-top: -4rem;
+    }
+
+    .perex p {
+        margin-top: 2rem;
+        max-width: 500px;
+        margin-bottom: 3rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
-    main {
-        margin-top: 12rem;
-    }
-
-    .intro h1 {
-        font-size: 1.6rem;
-    }
-
     header nav ul {
         flex-direction: column;
         gap: 0.5rem;
@@ -339,5 +360,23 @@ main {
 
     .footer-section.left {
         order: 2;
+    }
+
+    .perex {
+        align-self: start;
+    }
+
+    .perex p {
+        margin-top: 1.5rem;
+        max-width: 240px;
+    }
+
+    .intro {
+        margin-top: -2rem;
+        text-align: left;
+    }
+
+    .intro a {
+        bottom: 5%;
     }
 }
