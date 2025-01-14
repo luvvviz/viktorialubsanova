@@ -270,6 +270,10 @@ main {
     width: 100%; /* Full underline width on hover */
 }
 
+.arrow {
+    display: none;
+}
+
 @media screen and (min-width: 1440px) {
     .intro {
         max-width: 1920px;
@@ -371,5 +375,13 @@ main {
     .intro {
         margin-top: -2rem;
         text-align: left;
+    }
+
+    .intro a.scroll-text {
+        display: none; /* Hides the "Scroll" text */
+    }
+
+    .intro a .arrow {
+        display: block; /* Ensures the arrow is visible */
     }
 }
