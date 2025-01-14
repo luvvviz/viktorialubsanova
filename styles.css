@@ -17,13 +17,10 @@ body {
     padding: 0;
 }
 
-main, section {
+section {
     max-width: 1280px; /* Limit width to 1280px */
     margin: 0 auto; /* Center content */
     padding: 0 1.5rem; /* Add padding for smaller screens */
-}
-
-section {
     scroll-margin-top: 5rem; /* Adjust as needed */
 }
 
@@ -274,7 +271,7 @@ main {
 }
 
 @media screen and (min-width: 1440px) {
-    main, section {
+    .intro {
         max-width: 1920px;
     }
 }
