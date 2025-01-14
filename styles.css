@@ -270,7 +270,7 @@ main {
     width: 100%; /* Full underline width on hover */
 }
 
-.arrow {
+img.arrow {
     display: none;
 }
 
@@ -381,7 +381,7 @@ main {
         display: none; /* Hides the "Scroll" text */
     }
 
-    .intro a .arrow {
+    .intro a img.arrow {
         display: block; /* Ensures the arrow is visible */
         margin-top: 2rem;
     }
