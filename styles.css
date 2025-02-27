@@ -65,7 +65,7 @@ ul {
   }
   
   li:before {
-    content: "✦";
+    content: "\2726";
     font-size: 0.85rem;
     display: inline-block;
     margin-left: calc( var(--icon-space) * -1 );
@@ -226,42 +226,6 @@ main {
     text-align: right; /* Right-align the last section */
 }
 
-a.scroll-text {
-    text-decoration: none; /* No underline by default */
-    font-size: 1rem;
-    letter-spacing: 0.25px;
-    font-weight: 400;
-    color: #363b45;
-    position: relative;
-    display: inline-block;
-    transition: color 0.2s ease-in-out; /* Smooth hover effect */
-    position: absolute;
-    bottom: 15%;
-}
-
-a.scroll-text::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 1px;
-    width: 0;
-    height: 1.4px;
-    background-color: #4c5361;
-    transition: width 0.3s ease-in-out;
-}
-
-a.scroll-text:hover {
-    color: #4c5361; /* Optional: Change text color on hover */
-}
-
-a.scroll-text:hover::after {
-    width: 100%; /* Full underline width on hover */
-}
-
-img.arrow {
-    display: none;
-}
-
 
 @media screen and (max-width: 1200px) {
     h1 {
@@ -375,14 +339,5 @@ img.arrow {
 
     .perex {
         align-self: start;
-    }
-
-    a.scroll-text {
-        display: none; /* Hides the "Scroll" text */
-    }
-
-    img.arrow {
-        display: block; /* Ensures the arrow is visible */
-        margin-top: 2rem;
     }
 }
