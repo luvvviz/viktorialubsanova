@@ -12,48 +12,62 @@ body {
     font-family: 'Epilogue', Arial, sans-serif; /* Ensuring fallback fonts */
     line-height: 1.5;
     color: #363b45; /* Default text color */
-    background-color: #ebecee;
+    background-color: #f5f9ff;
     margin: 0;
     padding: 0;
 }
 
 section {
-    max-width: 1280px; /* Limit width to 1280px */
+    max-width: 1440px; /* Limit width to 1440px */
     margin: 0 auto; /* Center content */
     padding: 0 1.5rem; /* Add padding for smaller screens */
     scroll-margin-top: 5rem; /* Adjust as needed */
 }
 
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 1.5rem 2rem 0.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
+    padding: 3rem 0;
 }
 
-header nav {
+.perex {
+    margin-top: 0.5rem;
+    color: #4c5361;
+    max-width: 620px;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 2.5rem;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.left-nav {
-    justify-content: flex-start;
-}
-
-.right-nav {
-    justify-content: flex-end;
-}
+ul {
+    --icon-size: .8em;
+    --gutter: .5em;
+    padding: 0 0 0 var(--icon-size);
+  }
+  
+  ul li {
+    padding-left: var(--gutter);
+  }
+  
+  ul li::marker {
+    content: "✦";
+    font-size: var(--icon-size);
+  }
 
 header nav ul li a {
     text-decoration: none; /* No underline by default */
@@ -100,46 +114,15 @@ main {
     padding: 2rem 0;
 }
 
-.intro {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    margin-top: -2rem;
-}
-
-.intro h1 {
-    font-size: clamp(40px, 6vw, 110px);
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -2px;
-}
-
-.perex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.perex p {
-    font-size: clamp(16px, 2vw, 24px);
-    margin-top: 2.5rem;
-    line-height: 1.2;
-    max-width: 720px;
-}
-
 .works {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto 1rem auto;
 }
 
 .works h2 {
     font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
     letter-spacing: -0.75px;
 }
 
@@ -163,7 +146,7 @@ main {
     border-radius: 1rem;
     overflow: hidden; /* Ensures the image stays inside the bounding box */
     width: 100%; /* Ensure it fills its container */
-    height: 40rem; /* Maintain consistent height */
+    height: 42rem; /* Maintain consistent height */
 }
 
 .work-image img {
@@ -191,7 +174,7 @@ main {
 
 .work-details h3 {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #363b45;
 }
 
@@ -223,7 +206,9 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 2rem 1.5rem 2rem;
+    max-width: 1440px; /* Limit width to 1440px */
+    margin: 0 auto; /* Center content */
+    padding: 0 1.5rem 2rem; /* Add padding for smaller screens */
     font-size: 0.875rem;
     color: #4c5361; /* Subtle gray for text */
     line-height: 1.2;
@@ -274,29 +259,18 @@ img.arrow {
     display: none;
 }
 
-@media screen and (min-width: 1440px) {
-    .intro {
-        max-width: 1920px;
-    }
-}
 
-@media screen and (max-width: 1024px) {
-    .intro h1 {
-        letter-spacing: -1px;
-        font-weight: 700;
+@media screen and (max-width: 1200px) {
+    h1 {
+        font-size: 2rem;
     }
 
-    header {
-        padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-    }
-
-    header nav ul {
-        flex-wrap: wrap;
-        gap: 1rem;
+    .works h2 {
+        font-size: 1.8rem;
     }
 
     .work-image {
-        height: 24rem;
+        height: 35rem;
     }
 
     .work-content {
@@ -309,30 +283,59 @@ img.arrow {
         order: 1;
     }
 
-    .works {
-        margin: 4rem auto 0 auto;
-    }
-
     .work-details {
         order: 2;
     }
+}
 
-    .footer {
-        padding: 0 1.5rem 1.5rem 1.5rem;
+@media screen and (max-width: 840px) {
+    h1 {
+        max-width: 400px;
+        line-height: 1.2;
+    }
+
+    .perex {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    nav {
+        flex-direction: column;
+        gap: 5rem;
     }
 
     .intro {
-        margin-top: -4rem;
+        order: 1;
     }
 
-    .perex p {
-        margin-top: 2rem;
-        max-width: 500px;
-        margin-bottom: 3rem;
+    header {
+        padding: 2rem 0 3rem;
+    }
+
+    header nav ul {
+        align-items: end;
+    }
+
+    section {
+        padding: 0 1rem;
     }
 }
 
 @media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .works h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .work-details h3 {
+        font-size: 1.2rem;
+    }
+
     header nav ul {
         flex-direction: column;
         gap: 0.5rem;
@@ -344,6 +347,10 @@ img.arrow {
 
     .work-image {
         height: 16rem;
+    }
+
+    .work-image img {
+        scale: 1.3;
     }
 
     .details {
@@ -365,16 +372,6 @@ img.arrow {
 
     .perex {
         align-self: start;
-    }
-
-    .perex p {
-        margin-top: 1.5rem;
-        max-width: 240px;
-    }
-
-    .intro {
-        margin-top: -1rem;
-        text-align: left;
     }
 
     a.scroll-text {
