@@ -34,7 +34,7 @@ nav {
     bottom: 2px; /* Adjust underline's position */
     width: 0; /* Start with no width */
     height: 2px; /* Thickness of the underline */
-    background-color: #4c5361; /* Underline color */
+    background-color: #656a75; /* Underline color */
     transition: width 0.3s ease-in-out; /* Smooth animation */
 }
 
@@ -43,7 +43,7 @@ nav {
 }
 
 .back-link:hover {
-    color: #4c5361; /* Change text color on hover */
+    color: #656a75; /* Change text color on hover */
 }
 
 .back-link svg {
@@ -114,7 +114,7 @@ nav {
 }
 
 .detail-item p, .detail-item ul {
-    color: #4c5361; /* Subtle gray for paragraph text */
+    color: #656a75; /* Subtle gray for paragraph text */
     margin-bottom: 1rem; /* Space between paragraphs */
 }
 
