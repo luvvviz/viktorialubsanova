@@ -118,6 +118,37 @@ nav {
     margin-bottom: 1rem; /* Space between paragraphs */
 }
 
+.nav-style-link {
+    text-decoration: none; /* No underline by default */
+    /* font-size: 0.875rem; */
+    letter-spacing: 0.3px;
+    font-weight: 400;
+    color: #363b45;
+    position: relative;
+    display: inline-block;
+    transition: color 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.nav-style-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 0;
+    height: 1.4px;
+    background-color: #656a75;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-style-link:hover {
+    color: #656a75; /* Optional: Change text color on hover */
+}
+
+.nav-style-link:hover::after {
+    width: 100%; /* Full underline width on hover */
+}
+
+
 ul {
     display: flex;
     flex-direction: column;
