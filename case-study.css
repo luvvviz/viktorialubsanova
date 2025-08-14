@@ -210,7 +210,11 @@ ul {
 
 .contact-info ul li:before {
     display: none;
-  }
+}
+
+#margin-top {
+    margin-top: 0.5rem;
+}
 
 @media screen and (max-width: 972px) {
     .case-study-image img.second {
